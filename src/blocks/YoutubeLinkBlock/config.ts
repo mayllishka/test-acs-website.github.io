@@ -1,44 +1,50 @@
 import type { Block, Field } from 'payload'
 
-import { link } from '@/fields/link'
-
 const columnFields: Field[] = [
   {
     name: 'size',
     label: 'Größe',
     type: 'select',
-    defaultValue: 'full',
+    defaultValue: 'full', // Ensure this matches one of the options values
     options: [
-        {
-            label: 'Groß',
-            value: 'full',
-        },
-        {
-            label: 'Halb',
-            value: 'half',
-        },
-    ]  // Field name
+      {
+        label: 'Groß',
+        value: 'full',
+      },
+      {
+        label: 'Halb',
+        value: 'half',
+      },
+    ],
   },
   {
     name: 'link',
     type: 'text',
     label: 'Link',
     required: true,
-  }
+    index: true,
+    validate: (value: any) => {
+      console.log(value)
+      if (!value) {
+        return 'Ein Link ist erforderlich.' // Custom validation message
+      }
+      return true
+    },
+  },
 ]
 
-  export const YoutubeLinkBlock: Block = {
-    slug: 'youtubeLinkBlock',
-    interfaceName: 'youtubeLinkBlock',
-    fields: [
-      {
-        name: 'columns',
-        type: 'array',
-        admin: {
-          initCollapsed: false,
-        },
-        fields: columnFields,
+export const YoutubeLinkBlock: Block = {
+  slug: 'youtubeLinkBlock',
+  interfaceName: 'YoutubeLinkBlock',
+  fields: [
+    {
+      name: 'columns',
+      type: 'array',
+      required: true,
+      admin: {
+        initCollapsed: false,
       },
-    ],
-  }
-
+      fields: columnFields,
+    },
+  ],
+}

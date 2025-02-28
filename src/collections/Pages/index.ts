@@ -8,6 +8,7 @@ import { Content } from '../../blocks/Content/config'
 import { FormBlock } from '../../blocks/Form/config'
 import { MediaBlock } from '../../blocks/MediaBlock/config'
 import { InfoBlock } from '../../blocks/InfoBlock/config'
+import { YoutubeLinkBlock } from '@/blocks/YoutubeLinkBlock/config'
 import { hero } from '@/heros/config'
 import { slugField } from '@/fields/slug'
 import { populatePublishedAt } from '../../hooks/populatePublishedAt'
@@ -78,12 +79,13 @@ export const Pages: CollectionConfig<'pages'> = {
               name: 'layout',
               type: 'blocks',
               blocks: [
-                CallToAction, 
-                Content, 
-                MediaBlock, 
-                Archive, 
-                FormBlock, 
-                InfoBlock
+                CallToAction,
+                Content,
+                MediaBlock,
+                Archive,
+                FormBlock,
+                InfoBlock,
+                YoutubeLinkBlock,
               ],
               required: true,
               admin: {

@@ -190,7 +190,7 @@ export interface Page {
       | null;
     media?: (string | null) | Media;
   };
-  layout: (CallToActionBlock | ContentBlock | MediaBlock | ArchiveBlock | FormBlock | InfoBlock)[];
+  layout: (CallToActionBlock | ContentBlock | MediaBlock | ArchiveBlock | FormBlock | InfoBlock | YoutubeLinkBlock)[];
   meta?: {
     title?: string | null;
     /**
@@ -745,6 +745,20 @@ export interface InfoBlock {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "YoutubeLinkBlock".
+ */
+export interface YoutubeLinkBlock {
+  columns: {
+    size?: ('full' | 'half') | null;
+    link: string;
+    id?: string | null;
+  }[];
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'youtubeLinkBlock';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "redirects".
  */
 export interface Redirect {
@@ -1034,6 +1048,7 @@ export interface PagesSelect<T extends boolean = true> {
         archive?: T | ArchiveBlockSelect<T>;
         formBlock?: T | FormBlockSelect<T>;
         infoBlock?: T | InfoBlockSelect<T>;
+        youtubeLinkBlock?: T | YoutubeLinkBlockSelect<T>;
       };
   meta?:
     | T
@@ -1145,6 +1160,21 @@ export interface InfoBlockSelect<T extends boolean = true> {
         icon?: T;
         title?: T;
         content?: T;
+        id?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "YoutubeLinkBlock_select".
+ */
+export interface YoutubeLinkBlockSelect<T extends boolean = true> {
+  columns?:
+    | T
+    | {
+        size?: T;
+        link?: T;
         id?: T;
       };
   id?: T;
