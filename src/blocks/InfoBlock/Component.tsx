@@ -40,7 +40,6 @@ const IconWithCircle: FC<IconWithCircleProps> = ({ Icon }) => {
 }
 
 export const InfoBlock: React.FC<Props> = ({ columns }) => {
-  console.log('Rendering InfoBlock with columns:', columns)
 
   return (
     <div className="container my-16">

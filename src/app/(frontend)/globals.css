@@ -29,6 +29,8 @@
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
 
+    --third: 75 100% 48%;
+
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
@@ -50,7 +52,7 @@
   }
 
   [data-theme='dark'] {
-    --background: 0 0% 0%;
+    --background: 210 29% 13%;
     --foreground: 210 40% 98%;
 
     --card: 0 0% 4%;
@@ -61,6 +63,9 @@
 
     --primary: 210 40% 98%;
     --primary-foreground: 222.2 47.4% 11.2%;
+
+    --third: 75 100% 48.2%;
+    --third-foreground: 75 100% 48.2%;
 
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
@@ -78,7 +83,7 @@
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
 
-    --success: 196 100% 14%;
+    --success: 75 100% 48.2%;
     --warning: 34 51% 25%;
     --error: 10 39% 43%;
   }
