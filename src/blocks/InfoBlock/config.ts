@@ -25,7 +25,7 @@ const columnFields: Field[] = [
     label: 'Icon',
     options: [
       { label: 'Info', value: 'info' },
-      { label: 'Würfel', value: 'phone' },
+      { label: 'Würfel', value: 'cube' },
       { label: 'Code', value: 'code' },
       { label: 'Chip', value: 'chip' },
       { label: 'Hand', value: 'hand' },

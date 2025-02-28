@@ -733,7 +733,7 @@ export interface InfoBlock {
   columns?:
     | {
         size?: ('oneFourth' | 'half') | null;
-        icon?: ('info' | 'phone' | 'code' | 'chip' | 'hand') | null;
+        icon?: ('info' | 'cube' | 'code' | 'chip' | 'hand') | null;
         title?: string | null;
         content?: string | null;
         id?: string | null;
