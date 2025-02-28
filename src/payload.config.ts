@@ -37,7 +37,7 @@ export default buildConfig({
     livePreview: {
       breakpoints: [
         {
-          label: 'Mobile',
+          label: 'Smartphone',
           name: 'mobile',
           width: 375,
           height: 667,
@@ -89,4 +89,9 @@ export default buildConfig({
     },
     tasks: [],
   },
+  localization: {
+    locales: ['de', 'en'],
+    defaultLocale: 'de',
+    fallback: true
+  }
 })

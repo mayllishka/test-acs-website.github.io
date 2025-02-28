@@ -20,7 +20,7 @@ export const home: (args: HomeArgs) => RequiredDataFromCollectionSlug<'pages'> =
           link: {
             type: 'custom',
             appearance: 'default',
-            label: 'All posts',
+            label: 'Alle Beiträge',
             url: '/posts',
           },
         },
@@ -28,7 +28,7 @@ export const home: (args: HomeArgs) => RequiredDataFromCollectionSlug<'pages'> =
           link: {
             type: 'custom',
             appearance: 'outline',
-            label: 'Contact',
+            label: 'Kontakt',
             url: '/contact',
           },
         },
@@ -577,7 +577,7 @@ export const home: (args: HomeArgs) => RequiredDataFromCollectionSlug<'pages'> =
             link: {
               type: 'custom',
               appearance: 'default',
-              label: 'All posts',
+              label: 'All Beiträge',
               url: '/posts',
             },
           },

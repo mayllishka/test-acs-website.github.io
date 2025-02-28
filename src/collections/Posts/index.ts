@@ -103,7 +103,7 @@ export const Posts: CollectionConfig<'posts'> = {
               required: true,
             },
           ],
-          label: 'Content',
+          label: 'Inhalte',
         },
         {
           fields: [

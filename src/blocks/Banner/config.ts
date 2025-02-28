@@ -15,9 +15,9 @@ export const Banner: Block = {
       defaultValue: 'info',
       options: [
         { label: 'Info', value: 'info' },
-        { label: 'Warning', value: 'warning' },
-        { label: 'Error', value: 'error' },
-        { label: 'Success', value: 'success' },
+        { label: 'Warnung', value: 'warning' },
+        { label: 'Fehler', value: 'error' },
+        { label: 'Bestätigung', value: 'success' },
       ],
       required: true,
     },

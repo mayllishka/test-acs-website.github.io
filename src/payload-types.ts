@@ -107,7 +107,7 @@ export interface Config {
     header: HeaderSelect<false> | HeaderSelect<true>;
     footer: FooterSelect<false> | FooterSelect<true>;
   };
-  locale: null;
+  locale: 'de' | 'en';
   user: User & {
     collection: 'users';
   };
@@ -181,7 +181,7 @@ export interface Page {
             url?: string | null;
             label: string;
             /**
-             * Choose how the link should be rendered.
+             * Wählen Sie, wie der Link dargestellt werden soll.
              */
             appearance?: ('default' | 'outline') | null;
           };
@@ -190,7 +190,7 @@ export interface Page {
       | null;
     media?: (string | null) | Media;
   };
-  layout: (CallToActionBlock | ContentBlock | MediaBlock | ArchiveBlock | FormBlock)[];
+  layout: (CallToActionBlock | ContentBlock | MediaBlock | ArchiveBlock | FormBlock | InfoBlock)[];
   meta?: {
     title?: string | null;
     /**
@@ -421,7 +421,7 @@ export interface CallToActionBlock {
           url?: string | null;
           label: string;
           /**
-           * Choose how the link should be rendered.
+           * Wählen Sie, wie der Link dargestellt werden soll.
            */
           appearance?: ('default' | 'outline') | null;
         };
@@ -471,7 +471,7 @@ export interface ContentBlock {
           url?: string | null;
           label: string;
           /**
-           * Choose how the link should be rendered.
+           * Wählen Sie, wie der Link dargestellt werden soll.
            */
           appearance?: ('default' | 'outline') | null;
         };
@@ -724,6 +724,24 @@ export interface Form {
     | null;
   updatedAt: string;
   createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "infoBlock".
+ */
+export interface InfoBlock {
+  columns?:
+    | {
+        size?: ('oneFourth' | 'half') | null;
+        icon?: ('info' | 'phone' | 'code' | 'chip' | 'hand') | null;
+        title?: string | null;
+        content?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'infoBlock';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -1015,6 +1033,7 @@ export interface PagesSelect<T extends boolean = true> {
         mediaBlock?: T | MediaBlockSelect<T>;
         archive?: T | ArchiveBlockSelect<T>;
         formBlock?: T | FormBlockSelect<T>;
+        infoBlock?: T | InfoBlockSelect<T>;
       };
   meta?:
     | T
@@ -1111,6 +1130,23 @@ export interface FormBlockSelect<T extends boolean = true> {
   form?: T;
   enableIntro?: T;
   introContent?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "infoBlock_select".
+ */
+export interface InfoBlockSelect<T extends boolean = true> {
+  columns?:
+    | T
+    | {
+        size?: T;
+        icon?: T;
+        title?: T;
+        content?: T;
+        id?: T;
+      };
   id?: T;
   blockName?: T;
 }

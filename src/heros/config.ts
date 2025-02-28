@@ -17,22 +17,22 @@ export const hero: Field = {
       name: 'type',
       type: 'select',
       defaultValue: 'lowImpact',
-      label: 'Type',
+      label: 'Art',
       options: [
         {
-          label: 'None',
+          label: 'Keine',
           value: 'none',
         },
         {
-          label: 'High Impact',
+          label: 'Sehr groß',
           value: 'highImpact',
         },
         {
-          label: 'Medium Impact',
+          label: 'Mittelgroß',
           value: 'mediumImpact',
         },
         {
-          label: 'Low Impact',
+          label: 'Klein',
           value: 'lowImpact',
         },
       ],
@@ -60,6 +60,7 @@ export const hero: Field = {
     }),
     {
       name: 'media',
+      label: 'Medien',
       type: 'upload',
       admin: {
         condition: (_, { type } = {}) => ['highImpact', 'mediumImpact'].includes(type),
